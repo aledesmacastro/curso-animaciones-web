@@ -11,8 +11,9 @@ body {
 }
 
 .container:hover .cuadrado {
-    /*transform: scale(x, y);*/
-    transform: scale(1.5, .5);
+ /*transform: skew(x, y);*/
+ /*transform: skew(45deg, 45deg);*/
+ transform: skew(4deg, 4deg);
 }
 
 .cuadrado {
