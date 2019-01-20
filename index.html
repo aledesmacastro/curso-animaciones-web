@@ -8,9 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="cuadrado">
+        <div class="cuadrado" id="cuadrado">
             hola mundo!
         </div>
     </div>
 </body>
+<script type="text/javascript">
+	const $cuadrado = document.getElementById('cuadrado')
+	$cuadrado.addEventListener('animationend', (e) => {
+		console.log(e);
+	});
+</script>
 </html>
