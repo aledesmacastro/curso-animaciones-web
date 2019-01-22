@@ -3,21 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tranformacion punto de origen Css</title>
+    <title>javascript element.animate</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container">
-        <div class="cuadrado" id="cuadrado">
-            hola mundo!
+        <div class="pelota" id="pelota">
+
         </div>
     </div>
+    <script>
+        const $pelota = document.getElementById('pelota')
+        $pelota.animate([
+            // from
+            {
+                transform: 'translateX(0)'
+            },
+            // to
+            {
+                transform: 'translateX(500px)'
+            }
+        ],{
+            duration: 1000,
+            delay: 1000,
+            direction: 'normal',
+            easing: 'linear',
+            interations: Infinity,
+            fill: 'forwards',
+            iterationStart: .5 // = 50%
+            // endDelay: 5000,
+        });
+    </script>
 </body>
-<script type="text/javascript">
-	// Capturar en el evento de una animación
-	const $cuadrado = document.getElementById('cuadrado')
-	$cuadrado.addEventListener('animationend', (e) => {
-		console.log(e);
-	});
-</script>
 </html>
