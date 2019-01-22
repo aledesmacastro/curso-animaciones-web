@@ -9,12 +9,17 @@
 <body>
     <div class="container">
         <div class="pelota" id="pelota">
-
+        </div>
+        <div class="buttons">
+            <button class="btn" id="play">Play</button>
+            <button class="btn" id="pause">Pause</button>
+            <button class="btn" id="stop">Stop</button>
+            <button class="btn" id="reversa">Reversa</button>
         </div>
     </div>
     <script>
         const $pelota = document.getElementById('pelota')
-        $pelota.animate([
+        const animation = $pelota.animate([
             // from
             {
                 transform: 'translateX(0)'
@@ -28,11 +33,28 @@
             delay: 1000,
             direction: 'normal',
             easing: 'linear',
-            interations: Infinity,
+            iterations: Infinity,
             fill: 'forwards',
             iterationStart: .5 // = 50%
             // endDelay: 5000,
         });
+
+        const $playButton = document.getElementById('play');
+        const $pauseButton = document.getElementById('pause');
+        const $stopButton = document.getElementById('stop');
+        const $reversaButton = document.getElementById('reversa');
+
+        $playButton.addEventListener('click', (event) => {
+            animation.play();
+        });
+        $pauseButton.addEventListener('click', (event) => {
+            animation.pause();
+        });
+        $stopButton.addEventListener('click', (event) => {
+            animation.cancel();
+        });
+        $reversaButton.addEventListener('click', (event) => {
+            animation.reverse();
+        });
     </script>
 </body>
-</html>
