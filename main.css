@@ -22,7 +22,7 @@ body {
     border-radius: 50%;
     background-color: #7dc900;
     margin: 20px;
-    animation-name: cuadrado, rebote;
+    /*animation-name: cuadrado, rebote;*/
     animation-duration: 3s, .3s;
     /*transition: 1s;*/
     /*animation-delay: 1s;*/
