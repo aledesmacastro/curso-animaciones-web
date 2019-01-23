@@ -1,96 +1,72 @@
 body {
    /* display: flex; */
-   height: 200vh;
+   /* height: 200vh; */
    /* justify-content: center; */
    /* align-items: center; */
-   color: white;
+   /* color: white; */
    margin: 0;
-   background-image: url(platzi.png);
-   background-size: 100%;
+   /* background-image: url(platzi.png); */
+   /* background-size: 100%; */
 }
 
-.header {
-    background-color: #1d3644;
-    height: 52px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 200px;
-}
-
-.notification {
-    color: white;
-    width: 50px;
-    height: inherit;
+.container {
+    position: relative;
+    height: 500px;
+    background-color: #0f9bf6;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+}
+.content {
+    font-family: Arial;
+    text-align: center;
+    font-size: 2em;
+    color: rgba(255, 255, 255, .8);
+}
+.waves {
+    position: absolute;
+    bottom: -135px;
+    height: 527px;
+    width: 100%;
+    overflow: hidden;
+    /* right: 0;
+    left: 0;
+    bottom: 0;
+    height: 200px ; */
+}
+.wave {
+    position: absolute;
+    left: -180px;
+    bottom: 0;
+    width: 2402px;
+    height: 427px;
+    background: url(waves.png) center bottom no-repeat;
+    animation: 5s wave ease-in-out infinite alternate;
 }
 
-.notification:before {
-    content: "\f0f3";
-    font-family: "FontAwesome";
-    display: block;
+.wave.a {
+    background-position: 0 -854px;
+    animation-delay: .8s;
 }
 
-.notification.notify::before {
-    animation-name: bell;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* animation-iteration-count: infinite; */
-    transform-origin: center top;
+.wave.b {
+    background-position: 0 -427px;
+    animation-delay: .6s;
 }
 
-@keyframes bell {
-    0%{
-        transform: rotate(35deg);
-    }
-    12.5% {
-        transform: rotate(-30deg);
-    }
-    25% {
-        transform: rotate(25deg);
-    }
-    37.5% {
-        transform: rotate(-20deg);
+.wave.b {
+    background-position: 0 0;
+    animation-delay: 1.2s;
+}
+
+@keyframes wave {
+    0% { 
+        transform: translateX(0) translateY(0);
     }
     50% {
-        transform: rotate(15deg);
+        transform: translate(-80px, 30px);
     }
-    62.5% {
-        transform: rotate(-10deg);
+    100% {
+        transform: translateX(160px) translateY(-60px);
     }
-    75% {
-        transform: rotate(5deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
-}
-
-.notification:after {
-    /* content: "1"; */
-    content: attr(data-count);
-    font-size: 11px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 14px;
-    height: 14px;
-    background-color: #ff4600;
-    border-radius: 50%;
-    font-family: Arial;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    opacity: 0;
-    transition: .3s;
-    transform: scale(.5);
-    will-change: tranform, opacity;
-}
-
-.notification.show-count:after {
-    opacity: 1;
-    transform: scale(1);
 }
